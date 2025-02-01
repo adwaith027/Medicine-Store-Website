@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Welcome to Medicine Store, {{user}}</h1>
-</body>
-</html>
+{% extends 'layout/main-layout.html'%}
+{% block title %}Home{% endblock %}
+{% block 'content' %}
+    <div class="centered-container">
+        <div class="centered-content">
+            <h1>Welcome</h1>
+            <p>This is the home page of the Medicine Store.</p>
+        </div>
+    </div>
+{% endblock %}

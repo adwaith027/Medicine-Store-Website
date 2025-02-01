@@ -47,15 +47,15 @@ def userlogout(request):
     user=request.user
     return render(request,'logout.html',{'user':user})
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def home(request):
      return render(request,'home.html')
 
-@login_required(login_url='login/')
+# @login_required(login_url='login/')
 def aboutus(request):
      return render(request,'about.html')
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def create(request):
     form=storeForm()
     if request.method=='POST':

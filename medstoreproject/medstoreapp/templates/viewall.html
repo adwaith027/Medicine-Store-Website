@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Medicines</title>
-</head>
-<body>
+{% extends 'layout/main-layout.html'%}
+{% block title %}Available Medicines{% endblock %}
+{% block 'content' %}
     <div>
-    <h2>Available Medicines</h2>
+    <h1 style="display: flex;;justify-content: center;align-items: center;">Available Medicines</h1>
     {% if medicine %}
     <table border="1">
     <tr>
@@ -21,13 +16,19 @@
     </tr>
     {% for medicines in medicine %}
     <tr>
-        <td>{{medicines.picture}}</td>
+        <td>
+            {% if medicines.picture %}
+                <img src="{{ medicines.picture.url }}" alt="{{ medicines.name }}" style="width: 65px;height: 65px;">
+            {% else %}
+                <span>No image</span>
+            {% endif %}
+        </td>
         <td>{{medicines.name}}</td>
         <td>{{medicines.company}}</td>
         <td>{{medicines.quantity}}</td>
         <td>{{medicines.price}}</td>
         <td>{{medicines.expiry}}</td>
-        <td><a href="{% url 'update' medicines.id %}">Update Details</a>
+        <td><a href="{% url 'update' medicines.id %}">Update Details</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <a href="{% url 'delete' medicines.id %}">Delete</a></td>
     </tr>
     {% endfor %}
@@ -36,5 +37,4 @@
     <p>No Medicines have been added yet</p>
     {% endif %}
     </div>
-</body>
-</html>
+{% endblock %}

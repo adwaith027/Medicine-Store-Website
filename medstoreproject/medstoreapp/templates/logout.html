@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logout</title>
-</head>
-<body>
-    <form method="post">
+{% extends 'layout/main-layout.html'%}
+{% block title %}Logout{% endblock %}
+{% block 'content' %}
         {% csrf_token %}
         <p>Are u sure u want to logout {{user.username}}?</p>
         <button type="submit">Yes, Logout</button>
     </form>
-</body>
-</html>
+{% endblock %}

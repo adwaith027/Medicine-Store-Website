@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Medicine</title>
-</head>
-<body>
+{% extends 'layout/main-layout.html'%}
+{% block title %}Update Details{% endblock %}
+{% block 'content' %}
     <div>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -16,5 +11,4 @@
         <button type="submit">Update</button>
     </form>
     </div>
-</body>
-</html>
+{% endblock %}

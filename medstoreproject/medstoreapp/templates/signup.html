@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <style>
+        body{
+        margin: 0;
+        font-family: sans-serif;
+    }
+        form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    form input, form button {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    form button {
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #555;
+    }
+    </style>
 </head>
 <body>
-    <h2>Create your Account</h2>
     {% if messages %}
         <ul>
         {% for message in messages %}
@@ -14,6 +46,8 @@
         {% endfor %}
         </ul>
     {% endif %}
+    <div>
+    <h2 style="display: flex;justify-content: center;">Create your Account</h2>
     <form method="post">
     {% csrf_token %}
     <label for="uname">Preferred Username :</label>
@@ -25,7 +59,8 @@
     <label for="upassword2">Confirm Password :</label>
     <input type="password" name="password2">
     <button type="submit">Submit</button>
-    <p>Already have an account? Login <a href="{% url 'login' %}">here</a></p>
+    <p>Already have an account? <a href="{% url 'login' %}" style="text-decoration: none;color: black;">Login</a></p>
     </form>
+    </div>
 </body>
 </html>

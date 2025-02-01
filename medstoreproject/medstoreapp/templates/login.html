@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Store Login</title>
+    <style>
+        body{
+        margin: 0;
+        font-family: sans-serif;
+    }
+        form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    form input, form button {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    form button {
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #555;
+    }
+    </style>
 </head>
 <body>
     <div class="form-container">
+        <h2 style="display: flex;;justify-content: center;align-items: center;">Login Here</h2>
     <form method="post" class="custom-form">
         {% csrf_token %}
         <label for="unamel">Username :</label>
@@ -14,6 +48,7 @@
         <label for="upwdl">Password :</label>
         <input type="password" name="password"><br>
         <button type="submit">Login</button>
+        <p>Don't have an account? <a href="{% url 'signup' %}" style="text-decoration: none;color: black;">Signup</a></p>
     </form> 
     </div>
 </body>
