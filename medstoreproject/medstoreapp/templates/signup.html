@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
 </head>
 <body>
-    <!-- <p>Username: {{form.username}}</p>
-    <p>Password: {{form.password1}}</p>
-    <p>Confirm Password: {{form.password2}}</p>
+    <h2>Create your Account</h2>
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post">
+    {% csrf_token %}
+    <label for="uname">Preferred Username :</label>
+    <input type="text" name="username">
+    <label for="uemail">Email :</label>
+    <input type="email" name="email">
+    <label for="upassword1">Password :</label>
+    <input type="password" name="password1">
+    <label for="upassword2">Confirm Password :</label>
+    <input type="password" name="password2">
     <button type="submit">Submit</button>
-    {% if form.errors %}
-    {{form.errors}} 
-    {% endif %}-->
-    {{form}}
-    <button type="submit">Submit</button>
+    <p>Already have an account? Login <a href="{% url 'login' %}">here</a></p>
+    </form>
 </body>
 </html>

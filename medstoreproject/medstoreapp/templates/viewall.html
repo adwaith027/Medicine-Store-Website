@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Medicines</title>
+</head>
+<body>
+    <div>
+    <h2>Available Medicines</h2>
+    {% if medicine %}
+    <table border="1">
+    <tr>
+        <th>Medicine</th>
+        <th>Name</th>
+        <th>Manufacturer</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Expiry</th>
+        <th>Action</th>
+    </tr>
+    {% for medicines in medicine %}
+    <tr>
+        <td>{{medicines.picture}}</td>
+        <td>{{medicines.name}}</td>
+        <td>{{medicines.company}}</td>
+        <td>{{medicines.quantity}}</td>
+        <td>{{medicines.price}}</td>
+        <td>{{medicines.expiry}}</td>
+        <td><a href="{% url 'update' medicines.id %}">Update Details</a>
+        <a href="{% url 'delete' medicines.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <p>No Medicines have been added yet</p>
+    {% endif %}
+    </div>
+</body>
+</html>
