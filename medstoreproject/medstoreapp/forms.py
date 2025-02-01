@@ -16,19 +16,3 @@ class storeForm(forms.ModelForm):
             'expiry':forms.DateInput(attrs={'class':'form-control','placeholder':'Enter Expiry Date'}),
             'picture':forms.FileInput(attrs={'class':'form-control'})
         }
-    
-    # def file_check(self):
-    #         file=self.cleaned_data.get('picture')
-    #         if not file:
-    #             raise forms.ValidationError('No File Uploaded')
-        
-    # def type_check(self):
-    #         IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
-    #         file=self.cleaned_data.get('picture')
-    #         if not file:
-    #             raise forms.ValidationError('No file uploaded.')
-    #         ext=file.content_type.lower()
-    #         if ext not in IMAGE_FILE_TYPES:
-    #             raise forms.ValidationError('File type not supported')
-            
-    #         return file

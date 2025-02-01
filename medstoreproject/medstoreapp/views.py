@@ -17,6 +17,25 @@ def signup(request):
     form=UserCreationForm()
     return render(request,'signup.html',{'form':form})
 
+def login(request):
+    if request.method=='POST':
+         form=AuthenticationForm(request.POST)
+         if form.is_valid():
+              user=form.get_user()
+              username=user.username
+              login(request,user)
+              return redirect('home',{'user':username})
+    form=AuthenticationForm()
+    return render(request,'login.html',{'form':form})
+
+def logout(request):
+    if request.method=='POST':
+          logout(request)
+          return redirect('login')
+    user=request.user
+    return render(request,'logout.html',{'user':user})
+
+
 def create(request):
     form=storeForm()
     if request.method=='POST':
