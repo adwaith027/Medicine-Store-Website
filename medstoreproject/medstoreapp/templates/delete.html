@@ -1,12 +1,14 @@
 {% extends 'layout/main-layout.html'%}
 {% block title %}Delete Medicine{% endblock %}
 {% block 'content' %}
-    <div>
-    <h2>Delete Medicine</h2>
-    <form method="post">
-        {% csrf_token %}
-        <p>Are u sure u want to delete <b>{{medid.name}}</b> ?</p>
-        <button type="submit">Delete</button>
-    </form>
+    <div class="centered-container">
+        <div class="centered-content">
+            <h2>Delete Medicine</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <p>Are u sure u want to delete <b>{{medid.name}}</b> ?</p>
+                    <button type="submit">Delete</button>
+                </form>
+        </div>
     </div>
 {% endblock %}
