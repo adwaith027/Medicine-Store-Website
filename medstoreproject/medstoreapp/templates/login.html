@@ -44,9 +44,9 @@
     <form method="post" class="custom-form">
         {% csrf_token %}
         <label for="unamel">Username :</label>
-        <input type="text" name="username">
+        <input type="text" name="username" required>
         <label for="upwdl">Password :</label>
-        <input type="password" name="password"><br>
+        <input type="password" name="password" required><br>
         <button type="submit">Login</button>
         <p>Don't have an account? <a href="{% url 'signup' %}" style="text-decoration: none;color: black;">Signup</a></p>
     </form> 

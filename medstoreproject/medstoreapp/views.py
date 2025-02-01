@@ -47,15 +47,15 @@ def userlogout(request):
     user=request.user
     return render(request,'logout.html',{'user':user})
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
 def home(request):
      return render(request,'home.html')
 
-# @login_required(login_url='login/')
+@login_required(login_url='login/')
 def aboutus(request):
      return render(request,'about.html')
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
 def create(request):
     form=storeForm()
     if request.method=='POST':
@@ -73,10 +73,12 @@ def create(request):
             return redirect('create')
     return render(request,'create.html',{'form':form,"error":""})
 
+@login_required(login_url='login')
 def viewall(request):
      medicine=storeModel.objects.all()
      return render(request,'viewall.html',{'medicine':medicine})
 
+@login_required(login_url='login')
 def update(request,num):
     medid=storeModel.objects.get(pk=num)
     if request.method=='POST':
@@ -88,6 +90,7 @@ def update(request,num):
         form=storeForm(instance=medid)
     return render(request,'update.html',{'form':form})
 
+@login_required(login_url='login')
 def deletemed(request,num):
      medid=storeModel.objects.get(pk=num)
      if request.method=='POST':

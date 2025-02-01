@@ -1,6 +1,7 @@
 {% extends 'layout/main-layout.html'%}
 {% block title %}Logout{% endblock %}
 {% block 'content' %}
+    <form method="post">
         {% csrf_token %}
         <p>Are u sure u want to logout {{user.username}}?</p>
         <button type="submit">Yes, Logout</button>

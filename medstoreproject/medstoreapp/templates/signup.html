@@ -51,13 +51,13 @@
     <form method="post">
     {% csrf_token %}
     <label for="uname">Preferred Username :</label>
-    <input type="text" name="username">
+    <input type="text" name="username" required>
     <label for="uemail">Email :</label>
     <input type="email" name="email">
     <label for="upassword1">Password :</label>
-    <input type="password" name="password1">
+    <input type="password" name="password1" required>
     <label for="upassword2">Confirm Password :</label>
-    <input type="password" name="password2">
+    <input type="password" name="password2" required>
     <button type="submit">Submit</button>
     <p>Already have an account? <a href="{% url 'login' %}" style="text-decoration: none;color: black;">Login</a></p>
     </form>

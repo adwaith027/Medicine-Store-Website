@@ -4,7 +4,7 @@
     <div>
     <h1 style="display: flex;;justify-content: center;align-items: center;">Available Medicines</h1>
     {% if medicine %}
-    <table border="1">
+    <table border="1" style=>
     <tr>
         <th>Medicine</th>
         <th>Name</th>
@@ -28,8 +28,8 @@
         <td>{{medicines.quantity}}</td>
         <td>{{medicines.price}}</td>
         <td>{{medicines.expiry}}</td>
-        <td><a href="{% url 'update' medicines.id %}">Update Details</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <a href="{% url 'delete' medicines.id %}">Delete</a></td>
+        <td><a href="{% url 'update' medicines.id %}" style="text-decoration: none;color: black;">Update Details</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="{% url 'delete' medicines.id %}" style="text-decoration: none;color: black;">Delete Medicine</a></td>
     </tr>
     {% endfor %}
     </table>
