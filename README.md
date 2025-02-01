@@ -1,3 +1,5 @@
+<b>A medicine store website made using Python and Django that has user authentication and CRUD
+functionality for managing medicine inventory</b>
 <img src="https://github.com/user-attachments/assets/fab79f69-628a-4992-9784-33ebdb2ac49a" alt="Signup.jpeg" width="800" height="400">
 <img src="https://github.com/user-attachments/assets/13681965-09f4-4e4c-b1c7-16cfc37d517e" alt="login.jpeg" width="800" height="400">
 <img src="https://github.com/user-attachments/assets/6a52368a-81d5-4878-9e5d-0946e9301375" alt="home.jpeg" width="800" height="400">
