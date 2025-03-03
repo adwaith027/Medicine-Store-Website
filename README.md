@@ -1,3 +1,5 @@
+<h1>Medicine Store Website</h1>
+
 <b>A medicine store website made using Python and Django that has user authentication and CRUD
 functionality for managing medicine inventory</b><br><br><br>
 <img src="https://github.com/user-attachments/assets/fab79f69-628a-4992-9784-33ebdb2ac49a" alt="Signup.jpeg" width="400" height="200">
